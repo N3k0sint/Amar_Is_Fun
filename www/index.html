@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SPRM Quest: The Officer's Journey</title>
+    <link rel="stylesheet" href="style.css?v=4">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Overlay for Modals -->
+        <div id="modal-overlay"></div>
+        <!-- Header -->
+        <header>
+            <div class="logos">
+                <img src="assets/logo_sprm.png" alt="SPRM Logo" class="official-logo">
+                <img src="assets/amar_miit.webp" alt="AMAR MIIT Logo" class="official-logo">
+            </div>
+            <div id="stats">
+                <span>Score: <span id="score">0</span></span>
+                <span>Mission: <span id="mission-name">The Briefing</span></span>
+            </div>
+        </header>
+
+        <!-- Main Game Area -->
+        <main id="game-screen">
+            <!-- Start Screen -->
+            <div id="start-screen" class="screen active">
+                <h1>SPRM QUEST</h1>
+                <p>Welcome, Recruit. Your journey to become an SPRM Officer begins now.</p>
+                <button onclick="startGame()">ENLIST NOW</button>
+            </div>
+
+            <!-- Mission 1: The Briefing -->
+            <div id="briefing-screen" class="screen">
+                <h2>Mission 1: The Briefing</h2>
+                <p id="briefing-desc">Answer correctly to receive your official badge.</p>
+                <div id="quiz-container">
+                    <p id="question-text"></p>
+                    <div id="options-container"></div>
+                </div>
+            </div>
+
+            <!-- Mission 2: The Investigation -->
+            <div id="investigation-screen" class="screen">
+                <h2>Mission 2: The Investigation</h2>
+                <p>Navigate the maze to collect <span id="files-count">0</span>/3 evidence files.</p>
+                <div id="maze-container">
+                    <canvas id="maze-canvas"></canvas>
+                </div>
+                <p class="controls-hint">Use ARROW KEYS to move</p>
+                <!-- Mobile D-Pad -->
+                <div id="mobile-controls">
+                    <button id="btn-up" class="ctrl-btn">▲</button>
+                    <div class="horizontal-btns">
+                        <button id="btn-left" class="ctrl-btn">◀</button>
+                        <button id="btn-right" class="ctrl-btn">▶</button>
+                    </div>
+                    <button id="btn-down" class="ctrl-btn">▼</button>
+                </div>
+            </div>
+
+            <!-- Mission 3: The Prevention -->
+            <div id="prevention-screen" class="screen">
+                <h2>Mission 3: The Prevention</h2>
+                <p>Identify the correct ethical action in this procurement process.</p>
+                <div id="prevention-container">
+                    <p id="scenario-text">A contractor offers a 'referral fee' for a government tender.</p>
+                    <div id="prevention-options"></div>
+                </div>
+            </div>
+
+            <!-- End Screen -->
+            <div id="end-screen" class="screen">
+                <h1 class="success-text">MISSION ACCOMPLISHED</h1>
+                <p>Congratulations, Officer. You have proven your integrity.</p>
+                <div class="final-score">Final Score: <span id="final-score-val">0</span></div>
+                <button onclick="location.reload()">REPLAY QUEST</button>
+            </div>
+        </main>
+    </div>
+    <script src="game.js?v=4"></script>
+</body>
+</html>

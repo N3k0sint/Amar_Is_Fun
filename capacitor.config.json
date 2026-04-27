@@ -1,0 +1,10 @@
+{
+  "appId": "com.sprmquest.game",
+  "appName": "SPRM Quest",
+  "webDir": "www",
+  "server": {
+    "hostname": "localhost",
+    "androidScheme": "https",
+    "allowNavigation": ["localhost"]
+  }
+}
